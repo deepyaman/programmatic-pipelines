@@ -1,6 +1,7 @@
 """Project settings. There is no need to edit this file unless you want to change values
 from the Kedro defaults. For further information, including these default values, see
 https://kedro.readthedocs.io/en/stable/kedro_project_setup/settings.html."""
+from kedro.config import TemplatedConfigLoader
 
 # Instantiated project hooks.
 # from jinja_example.hooks import ProjectHooks
@@ -25,7 +26,7 @@ https://kedro.readthedocs.io/en/stable/kedro_project_setup/settings.html."""
 # CONF_SOURCE = "conf"
 
 # Class that manages how configuration is loaded.
-# CONFIG_LOADER_CLASS = ConfigLoader
+CONFIG_LOADER_CLASS = TemplatedConfigLoader
 # Keyword arguments to pass to the `CONFIG_LOADER_CLASS` constructor.
 # CONFIG_LOADER_ARGS = {
 #       "config_patterns": {

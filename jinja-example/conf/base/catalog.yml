@@ -2,3 +2,16 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://kedro.readthedocs.io/en/stable/data/data_catalog.html
+{% for region in ['parasubicular', 'parainsular'] %}
+
+{{ region }}.data_right:
+    type: PartitionedDataSet
+    path: data/01_raw/ClinicalDTI/R_VIM/seedmasks/
+    dataset: pandas.CSVDataSet
+    filename_suffix: /{{ region  }}_R_T1.nii.gz
+
+{{ region }}.data_right_output:
+    type: pandas.CSVDataSet
+    filepath: data/03_primary/{{ region }}_output.csv
+
+{% endfor %}
